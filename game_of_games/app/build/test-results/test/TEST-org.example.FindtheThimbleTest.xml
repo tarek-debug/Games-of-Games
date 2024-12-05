@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.example.FindtheThimbleTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-05T23:41:17" hostname="Metis-MacBook-Air.local" time="30.025">
+  <properties/>
+  <testcase name="testValidInput()" classname="org.example.FindtheThimbleTest" time="0.002"/>
+  <testcase name="testTimeoutForUser()" classname="org.example.FindtheThimbleTest" time="30.014"/>
+  <testcase name="testBestOfValue()" classname="org.example.FindtheThimbleTest" time="0.002"/>
+  <testcase name="testScoring()" classname="org.example.FindtheThimbleTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
