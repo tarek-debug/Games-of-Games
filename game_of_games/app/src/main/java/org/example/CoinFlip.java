@@ -119,9 +119,10 @@ public class CoinFlip {
             System.out.println("  ");
        }
 
-       scanner.close();
+       //scanner.close();
        System.out.println("Final Score: You " + userScore + " - " + computerScore + " Computer");
        System.out.println("Thank you for playing!");
+       System.out.println("  ");
     }
     
     // Testing functions
