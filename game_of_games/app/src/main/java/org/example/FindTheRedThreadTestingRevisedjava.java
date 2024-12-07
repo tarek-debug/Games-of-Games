@@ -12,6 +12,7 @@ public class FindTheRedThread {
 		
 		boolean won = false;
 		boolean playerdraws = false;
+		int pullnum;
 		int total;
 		int[] table;
 		boolean[] truetable;
@@ -63,9 +64,26 @@ public class FindTheRedThread {
 			
 			}
 			
+		total = inputnum;	
+		System.out.print("Please enter an integer for the number of threads to draw by: ");
+			
+		input = scanner.nextLine();  // Read user input
+		inputnum = Integer.parseInt(input);
+		pullnum = inputnum;
+		System.out.println();
+		
+		while (inputnum < 1 || inputnum > total) {
+			
+			System.out.print("Invalid number. Please enter an integer greater than 0 and less than " + total + ": ");
+			
+			input = scanner.nextLine();  // Read user input
+			inputnum = Integer.parseInt(input);
+			System.out.println();
+			
+		}
+		
 		// Initializing arrays used for table shuffling
 		
-		total = inputnum;
 		table = new int[total];
 		shuffletable = new int[total];
 		truetable = new boolean[total];
@@ -97,15 +115,16 @@ public class FindTheRedThread {
 		}	
 		
 		System.out.println("Done!");
-		System.out.print("Shuffled table: ");
+		System.out.println();
 		
-		for (int i = 0; i < table.length; i++ ) {
+		System.out.println("Note for testing: The game works by reading the game table left to right, until the 0th entry (aka the red thread) is drawn. Drawn entries are marked with a -1.");
+		System.out.println();
+		
+		System.out.println("Current table: ");
+		for (int i = 0; i < shuffletable.length; i++) {
 			System.out.print(shuffletable[i] + " ");
 		}
 		System.out.println();
-		System.out.println();
-		
-		System.out.println("NOTE FOR TESTING: The game works by going down the table, left to right, until the 0, which is the red thread, is drawn. Drawn entries are replaced with a -1.");
 		System.out.println();
 		
 		System.out.println("Picking first player...");
@@ -131,10 +150,9 @@ public class FindTheRedThread {
 		
 		while (won == false) {
 			
-			System.out.println("Turn " + (counter+1) + ":");
-			System.out.println();
-			
 			if (playerdraws) {
+				
+				for (int i = 0; i < pullnum; i++) {
 				System.out.print("It's your turn! Type something to draw a thread: ");
 				
 				input = scanner.nextLine();
@@ -144,43 +162,52 @@ public class FindTheRedThread {
 				if (drawnnum == 0) {
 					System.out.println("You drew the red thread!");
 					won = true;
+					playerdraws = true;
 					break;
 				} else {
 					int randcolor = random.nextInt(colors.length);
 					System.out.println("You drew a " + colors[randcolor] + " thread. Bummer!");
 					shuffletable[counter] = -1;
 					counter++;
-					playerdraws = false;
 					
-					System.out.print("Table status: ");
-					for (int i = 0; i < table.length; i++ ) {
-						System.out.print(shuffletable[i] + " ");
-					}
-					System.out.println();
+		
 					System.out.println();
 				}
+				System.out.println("Current table: ");
+				for (int j = 0; j < shuffletable.length; j++) {
+					System.out.print(shuffletable[j] + " ");
+				}
+				System.out.println();
+				System.out.println();
+				}
+				playerdraws = false;
+				
 			} else {
+				for (int i = 0; i < pullnum; i++) {
 				System.out.println("It's the computer's turn!");
 				drawnnum = shuffletable[counter];
 				
 				if (drawnnum == 0) {
 					System.out.println("The computer drew the red thread!");
 					won = true;
+					playerdraws = false;
 					break;
 				} else {
 					int randcolor = random.nextInt(colors.length);
 					System.out.println("The computer drew a " + colors[randcolor] + " thread. Bummer!");
 					shuffletable[counter] = -1;
 					counter++;
-					playerdraws = true;
 					
-					System.out.print("Table status: ");
-					for (int i = 0; i < table.length; i++ ) {
-						System.out.print(shuffletable[i] + " ");
-					}
-					System.out.println();
 					System.out.println();
 				}
+				System.out.println("Current table: ");
+				for (int j = 0; j < shuffletable.length; j++) {
+					System.out.print(shuffletable[j] + " ");
+				}
+				System.out.println();
+				System.out.println();
+			}
+				playerdraws = true;
 			}
 			
 		}
@@ -189,9 +216,9 @@ public class FindTheRedThread {
 		
 		System.out.println();
 		if (playerdraws == true) {
-			System.out.println("You won! Congratulations!");
-		} else {
 			System.out.println("You lost. Better luck next time!");
+		} else {
+			System.out.println("You won! Congratulations!");
 		}
 		
 	}	
