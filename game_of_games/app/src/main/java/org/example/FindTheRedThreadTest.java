@@ -3,7 +3,7 @@ package CPSC340;
 import java.util.Scanner;
 import java.util.Random;
 
-public class FindTheRedThread {
+public class FindTheRedThreadTest {
 	public static void main(String[] args) {
 		
 		/**

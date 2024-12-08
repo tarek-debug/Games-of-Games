@@ -1,20 +1,20 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class EvenOrOddGame {
+public class EvenOrOddGameTesting {
 
     private int playerScore;
     private int computerScore;
     private final Random random;
 
-    public EvenOrOddGame() {
+    public EvenOrOddGameTesting() {
         this.playerScore = 0;
         this.computerScore = 0;
         this.random = new Random();
     }
 
     public static void main(String[] args) {
-        EvenOrOddGame game = new EvenOrOddGame();
+        EvenOrOddGameTesting game = new EvenOrOddGameTesting();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the 'Even or Odd' Game!");

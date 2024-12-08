@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="EvenOrOddTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-07T23:58:16" hostname="LAPTOP-4606RO28" time="0.242">
+<testsuite name="EvenOrOddTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-12-08T00:19:53" hostname="LAPTOP-4606RO28" time="0.248">
   <properties/>
-  <testcase name="testIsSumEven()" classname="EvenOrOddTest" time="0.175"/>
-  <testcase name="testAssignComputerRole_Odd()" classname="EvenOrOddTest" time="0.033"/>
-  <testcase name="testGetPlayerChoice_InvalidThenValid()" classname="EvenOrOddTest" time="0.012"/>
-  <testcase name="testAssignComputerRole_Even()" classname="EvenOrOddTest" time="0.003"/>
-  <testcase name="testGetPlayerChoice_Valid()" classname="EvenOrOddTest" time="0.003"/>
+  <testcase name="testIsSumEven()" classname="EvenOrOddTest" time="0.185"/>
+  <testcase name="testAssignComputerRole_Odd()" classname="EvenOrOddTest" time="0.031"/>
+  <testcase name="testGetPlayerChoice_InvalidThenValid()" classname="EvenOrOddTest" time="0.01"/>
+  <testcase name="testAssignComputerRole_Even()" classname="EvenOrOddTest" time="0.002"/>
+  <testcase name="testGetPlayerChoice_Valid()" classname="EvenOrOddTest" time="0.002"/>
   <testcase name="testCapitalize()" classname="EvenOrOddTest" time="0.002"/>
   <system-out><![CDATA[Choose your role (Even/Odd): Invalid choice. Please enter 'Even' or 'Odd'.
 Choose your role (Even/Odd): Choose your role (Even/Odd): ]]></system-out>

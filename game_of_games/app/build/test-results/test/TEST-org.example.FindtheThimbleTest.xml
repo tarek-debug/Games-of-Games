@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.FindtheThimbleTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-07T23:58:48" hostname="LAPTOP-4606RO28" time="31.626">
+<testsuite name="org.example.FindtheThimbleTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-08T00:20:25" hostname="LAPTOP-4606RO28" time="31.615">
   <properties/>
-  <testcase name="testValidInput()" classname="org.example.FindtheThimbleTest" time="0.028"/>
-  <testcase name="testTimeoutForUser()" classname="org.example.FindtheThimbleTest" time="31.591"/>
-  <testcase name="testBestOfValue()" classname="org.example.FindtheThimbleTest" time="0.002"/>
+  <testcase name="testValidInput()" classname="org.example.FindtheThimbleTest" time="0.025"/>
+  <testcase name="testTimeoutForUser()" classname="org.example.FindtheThimbleTest" time="31.585"/>
+  <testcase name="testBestOfValue()" classname="org.example.FindtheThimbleTest" time="0.001"/>
   <testcase name="testScoring()" classname="org.example.FindtheThimbleTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
