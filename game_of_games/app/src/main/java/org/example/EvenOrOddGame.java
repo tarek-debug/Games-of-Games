@@ -1,5 +1,10 @@
+package CPSC340;
+
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class EvenOrOddGame {
 
@@ -25,9 +30,16 @@ public class EvenOrOddGame {
 
         int bestOf = game.getBestOfRounds(scanner);
         int requiredWins = (bestOf / 2) + 1;
+        int roundsPlayed = 0;
 
         while (game.playerScore < requiredWins && game.computerScore < requiredWins) {
             game.playRound(scanner, playerChoice);
+            roundsPlayed++;
+
+            if (bestOf == 3 && roundsPlayed == 2 && game.playerScore == 1 && game.computerScore == 1) {
+                System.out.println("Best out of 3, Tied 1-1 after 2 rounds");
+            }
+
             game.printScores();
 
             if (game.playerScore == requiredWins || game.computerScore == requiredWins) {
@@ -40,13 +52,19 @@ public class EvenOrOddGame {
 
     public String getPlayerChoice(Scanner scanner) {
         while (true) {
-            System.out.print("Choose your role (Even/Odd): ");
+            System.out.print("Choose your role (Even/Odd or No agreement): ");
             String choice = scanner.nextLine().trim().toLowerCase();
 
             if (choice.equals("even") || choice.equals("odd")) {
                 return capitalize(choice);
+            } else if (choice.equals("no agreement")) {
+                String[] roles = {"Even", "Odd"};
+                String playerRole = roles[random.nextInt(2)];
+                String computerRole = playerRole.equals("Even") ? "Odd" : "Even";
+                System.out.println("Randomly assigned roles: Player -> " + playerRole + ", Computer -> " + computerRole);
+                return playerRole;
             } else {
-                System.out.println("Invalid choice. Please enter 'Even' or 'Odd'.");
+                System.out.println("Invalid choice. Please enter 'Even', 'Odd', or 'No agreement'.");
             }
         }
     }
@@ -74,8 +92,11 @@ public class EvenOrOddGame {
     public void playRound(Scanner scanner, String playerChoice) {
         System.out.println("\n--- New Round ---");
 
-        int playerNumber = getPlayerNumber(scanner);
-        int computerNumber = random.nextInt(11);
+        // Computer chooses first
+        int computerNumber = random.nextInt(10) + 1; // Ensure range is 1 to 10
+
+        // Player chooses next
+        int playerNumber = getPlayerNumberWithTimeout(scanner);
 
         int sum = playerNumber + computerNumber;
         System.out.println("Sum of numbers: " + sum);
@@ -89,21 +110,63 @@ public class EvenOrOddGame {
             computerScore++;
             System.out.println("Computer wins this round!");
         }
+
+        checkAndCorrectScoring(sumIsEven, playerChoice);
     }
 
-    public int getPlayerNumber(Scanner scanner) {
-        while (true) {
-            System.out.print("Enter a positive integer: ");
+    public int getPlayerNumberWithTimeout(Scanner scanner) {
+        final AtomicBoolean inputReceived = new AtomicBoolean(false);
+        final int[] playerNumber = new int[1];
+
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (!inputReceived.get()) {
+                    System.out.println("\nTimeout during number selection. Please reselect your number.");
+                }
+            }
+        }, 30000); // 30 seconds timeout
+
+        while (!inputReceived.get()) {
+            System.out.print("Enter a positive integer (1-10): ");
             try {
-                int number = Integer.parseInt(scanner.nextLine().trim());
-                if (number >= 0) {
-                    return number;
+                String input = scanner.nextLine().trim();
+                if (input.isEmpty()) {
+                    continue;
+                }
+                playerNumber[0] = Integer.parseInt(input);
+                if (playerNumber[0] >= 1 && playerNumber[0] <= 10) {
+                    inputReceived.set(true);
                 } else {
-                    System.out.println("Number must be non-negative.");
+                    System.out.println("Invalid input. Please enter a number between 1 and 10.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a valid integer.");
             }
+        }
+
+        timer.cancel();
+        return playerNumber[0];
+    }
+
+    public void checkAndCorrectScoring(boolean sumIsEven, String playerChoice) {
+        int expectedPlayerScore = 0;
+        int expectedComputerScore = 0;
+
+        if ((sumIsEven && playerChoice.equalsIgnoreCase("Even")) || (!sumIsEven && playerChoice.equalsIgnoreCase("Odd"))) {
+            expectedPlayerScore = playerScore;
+            expectedComputerScore = computerScore - 1;
+        } else {
+            expectedPlayerScore = playerScore - 1;
+            expectedComputerScore = computerScore;
+        }
+
+        if (playerScore < 0 || computerScore < 0 ||
+                (playerScore != expectedPlayerScore && computerScore != expectedComputerScore)) {
+            System.out.println("Incorrect scoring detected. Correcting scores...");
+            playerScore = Math.max(expectedPlayerScore, 0);
+            computerScore = Math.max(expectedComputerScore, 0);
         }
     }
 

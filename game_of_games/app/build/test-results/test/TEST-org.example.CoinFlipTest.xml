@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="org.example.CoinFlipTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-08T00:19:53" hostname="LAPTOP-4606RO28" time="31.621">
+<testsuite name="org.example.CoinFlipTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-12-10T21:37:45" hostname="LAPTOP-4606RO28" time="27.713">
   <properties/>
-  <testcase name="testValidInput()" classname="org.example.CoinFlipTest" time="0.035"/>
-  <testcase name="testTimeoutForUser()" classname="org.example.CoinFlipTest" time="31.58"/>
-  <testcase name="testBestOfValue()" classname="org.example.CoinFlipTest" time="0.002"/>
+  <testcase name="testValidInput()" classname="org.example.CoinFlipTest" time="0.014"/>
+  <testcase name="testTimeoutForUser()" classname="org.example.CoinFlipTest" time="27.696"/>
+  <testcase name="testBestOfValue()" classname="org.example.CoinFlipTest" time="0.001"/>
   <testcase name="testScoring()" classname="org.example.CoinFlipTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

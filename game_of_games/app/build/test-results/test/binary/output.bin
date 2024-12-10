@@ -1,2 +1,10 @@
-KChoose your role (Even/Odd): Invalid choice. Please enter 'Even' or 'Odd'.
-Choose your role (Even/Odd): Choose your role (Even/Odd): 
+-Choose your role (Even/Odd or No agreement): lChoose your role (Even/Odd or No agreement): Invalid choice. Please enter 'Even', 'Odd', or 'No agreement'.
+-Choose your role (Even/Odd or No agreement): 
+--- New Round ---
+#Computer has chosen its number: 10
+4Enter a positive integer (1-10): Sum of numbers: 15
+Computer wins this round!
+fChoose your role (Even/Odd or No agreement): Randomly assigned roles: Player -> Even, Computer -> Odd
+	eEnter the number of rounds to play (must be odd, e.g., 3, 5, 7): Please enter a positive odd number.
+	AEnter the number of rounds to play (must be odd, e.g., 3, 5, 7): 
+AEnter the number of rounds to play (must be odd, e.g., 3, 5, 7): 

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CPSC340.EvenOrOddTestingTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2024-12-10T21:37:45" hostname="LAPTOP-4606RO28" time="0.105">
+  <properties/>
+  <testcase name="testCheckAndCorrectScoring()" classname="CPSC340.EvenOrOddTestingTest" time="0.069"/>
+  <testcase name="testAssignComputerRole_Odd()" classname="CPSC340.EvenOrOddTestingTest" time="0.011"/>
+  <testcase name="testGetPlayerChoice_ValidEven()" classname="CPSC340.EvenOrOddTestingTest" time="0.003"/>
+  <testcase name="testGetPlayerChoice_InvalidThenValid()" classname="CPSC340.EvenOrOddTestingTest" time="0.001"/>
+  <testcase name="testPlayRound()" classname="CPSC340.EvenOrOddTestingTest" time="0.005"/>
+  <testcase name="testAssignComputerRole_Even()" classname="CPSC340.EvenOrOddTestingTest" time="0.0"/>
+  <testcase name="testGetPlayerChoice_NoAgreement()" classname="CPSC340.EvenOrOddTestingTest" time="0.004"/>
+  <testcase name="testGetBestOfRounds_InvalidThenValid()" classname="CPSC340.EvenOrOddTestingTest" time="0.001"/>
+  <testcase name="testGetBestOfRounds_Valid()" classname="CPSC340.EvenOrOddTestingTest" time="0.001"/>
+  <testcase name="testCapitalize()" classname="CPSC340.EvenOrOddTestingTest" time="0.001"/>
+  <system-out><![CDATA[Choose your role (Even/Odd or No agreement): Choose your role (Even/Odd or No agreement): Invalid choice. Please enter 'Even', 'Odd', or 'No agreement'.
+Choose your role (Even/Odd or No agreement): 
+--- New Round ---
+Computer has chosen its number: 10
+Enter a positive integer (1-10): Sum of numbers: 15
+Computer wins this round!
+Choose your role (Even/Odd or No agreement): Randomly assigned roles: Player -> Even, Computer -> Odd
+Enter the number of rounds to play (must be odd, e.g., 3, 5, 7): Please enter a positive odd number.
+Enter the number of rounds to play (must be odd, e.g., 3, 5, 7): Enter the number of rounds to play (must be odd, e.g., 3, 5, 7): ]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
