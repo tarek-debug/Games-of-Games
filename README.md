@@ -83,6 +83,9 @@ All games are accessed via the **Game of Games**, where you can select which gam
 - `FindTheRedThread.java`: Implements the Find the Red Thread game.
 
 ### **Test Classes**
+- `CoinFlipTest.java`, `FindTheThimbleTest.java`, etc.: Test with additional print statements for to make sure games work.
+
+### **Unit Test Classes**
 - `CoinFlipTest.java`, `FindTheThimbleTest.java`, etc.: Unit tests for each game's functionality.
 
 ---
@@ -98,10 +101,10 @@ All games are accessed via the **Game of Games**, where you can select which gam
 1. Clone this repository to your local machine:  
    `bash git clone <repository_url>`
 2. Open the project in your preferred Java IDE or navigate to the project folder via terminal.  
-3. Compile the main entry point (`GameOfGames.java`):  
-   `bash javac GameOfGames.java`
+3. Compile the main entry point (`PlayGames.java`):  
+   `bash javac PlayGames.java`
 4. Run the program:  
-   `bash java GameOfGames`
+   `bash java PlayGames`
 
 ---
 
