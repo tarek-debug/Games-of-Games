@@ -1,4 +1,4 @@
-package CPSC340;
+package org.example;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -6,6 +6,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+//Test mode
 public class EvenOrOddTesting {
 
     private int playerScore;

@@ -8,7 +8,7 @@ import java.io.PrintStream;
 
 import org.junit.jupiter.api.Test;
 
-public class GameofGamesTest {
+public class PlayGamesTest {
 
     @Test
     public void testMenuDisplay() {
@@ -22,7 +22,7 @@ public class GameofGamesTest {
         System.setOut(new PrintStream(outputStream));
 
         // Run the program
-        GameofGames.main(new String[]{});
+        PlayGames.main(new String[]{});
 
         // Verify menu and exit message
         String output = outputStream.toString();
@@ -48,7 +48,7 @@ public class GameofGamesTest {
         System.setOut(new PrintStream(outputStream));
 
         // Run the program
-        GameofGames.main(new String[]{});
+        PlayGames.main(new String[]{});
 
         // Verify invalid input message
         String output = outputStream.toString();

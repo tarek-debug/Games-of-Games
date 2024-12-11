@@ -1,20 +1,21 @@
 package org.example;
+
+import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.Random;
 
-public class FindtheThimble {
-
+//Test mode
+public class CoinFlipTest {
     private int userScore = 0;
     private int computerScore = 0;
 
     //main method to run the game
     public static void main(String[] args){
-        FindtheThimble game = new FindtheThimble();
+        CoinFlip game = new CoinFlip();
         game.play();
     }
     
@@ -25,7 +26,7 @@ public class FindtheThimble {
         Random random = new Random();
 
         //setting best out of value
-        System.out.println("Welcome to the Find the Thimble Game!");
+        System.out.println("Welcome to the Coin Flip Game!");
         System.out.println("  ");
         System.out.println("Enter an odd number for the 'best out of' rounds:");
 
@@ -44,8 +45,14 @@ public class FindtheThimble {
 
         while (userScore < winValue && computerScore < winValue){
             
+             //Computer guess
+             String computerFlip = random.nextBoolean() ? "heads" : "tails";
+             System.out.println("  ");
+             System.out.println("The computer has flipped: " + computerFlip);
+             System.out.println("  ");
+
             //User guess
-            System.out.println("Enter your guess (right or left): ");
+            System.out.println("Enter your guess (heads or tails): ");
             System.out.println("  ");
             
             final CompletableFuture<String> userInputFuture = new CompletableFuture<>();
@@ -79,17 +86,12 @@ public class FindtheThimble {
                 continue;
             }
 
-            while (!userGuess.equals("right") && !userGuess.equals("left")){
-                System.out.println("Invalid input. Please enter 'right' or 'left'");
+            while (!userGuess.equals("heads") && !userGuess.equals("tails")){
+                System.out.println("Invalid input. Please enter 'heads' or 'tails'");
                 System.out.println("  ");
                 userGuess = scanner.nextLine().toLowerCase();
             } 
 
-            //Computer guess
-            String computerFlip = random.nextBoolean() ? "right" : "left";
-            System.out.println("  ");
-            System.out.println("The computer hid the thimble on the: " + computerFlip);
-            System.out.println("  ");
             
             if(userGuess.equals(computerFlip)){
                 userScore++;
@@ -121,9 +123,9 @@ public class FindtheThimble {
        //scanner.close();
        System.out.println("Final Score: You " + userScore + " - " + computerScore + " Computer");
        System.out.println("Thank you for playing!");
+       System.out.println("  ");
     }
-
-
+    
     // Testing functions
     public int getUserScore() {
         return userScore;

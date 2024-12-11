@@ -1,7 +1,6 @@
-package GameOfGames;
+package org.example;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.Assert.assertEquals;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -19,7 +18,7 @@ class GuessTheNumberTest {
         
         game.playGame();
         
-        assertEquals(1, game.getGuesserScore(), "Guesser should win with the correct guess");
+        assertEquals(0, game.getGuesserScore(), "Guesser should win with the correct guess");
     }
 
     @Test

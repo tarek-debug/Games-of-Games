@@ -7,7 +7,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.Random;
 
-public class FindtheThimble {
+public class FindtheThimbleTest {
 
     private int userScore = 0;
     private int computerScore = 0;
@@ -43,6 +43,11 @@ public class FindtheThimble {
         ScheduledExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
         while (userScore < winValue && computerScore < winValue){
+            //Computer guess
+            String computerFlip = random.nextBoolean() ? "right" : "left";
+            System.out.println("  ");
+            System.out.println("The computer hid the thimble on the: " + computerFlip);
+            System.out.println("  ");
             
             //User guess
             System.out.println("Enter your guess (right or left): ");
@@ -84,12 +89,6 @@ public class FindtheThimble {
                 System.out.println("  ");
                 userGuess = scanner.nextLine().toLowerCase();
             } 
-
-            //Computer guess
-            String computerFlip = random.nextBoolean() ? "right" : "left";
-            System.out.println("  ");
-            System.out.println("The computer hid the thimble on the: " + computerFlip);
-            System.out.println("  ");
             
             if(userGuess.equals(computerFlip)){
                 userScore++;

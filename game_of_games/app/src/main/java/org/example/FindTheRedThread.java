@@ -1,4 +1,4 @@
-package CPSC340;
+package org.example;
 
 import java.util.Scanner;
 import java.util.Random;
@@ -21,7 +21,6 @@ public class FindTheRedThread {
 		String[] colors = {"orange", "yellow", "lime", "green", "cyan", "blue", "violet", "purple", "pink", "white", "black", "grey"};
 		
 		// Prompting user for thread count
-	
 		Scanner scanner = new Scanner(System.in);  // Create a Scanner object
 		System.out.print("Please enter total number of threads: ");
 

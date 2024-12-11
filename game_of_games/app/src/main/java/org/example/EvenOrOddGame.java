@@ -1,4 +1,4 @@
-package CPSC340;
+package org.example;
 
 import java.util.Random;
 import java.util.Scanner;

@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class GameofGames {
+public class PlayGames {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
@@ -34,20 +34,18 @@ public class GameofGames {
                     findTheThimbleGame.play();
                     break;
 
-                // case 3:
-                //     GuessTheNumberGame guessTheNumberGame = new GuessTheNumberGame();
-                //     guessTheNumberGame.play();
-                //     break;
+                case 3:
+                    GuessTheNumber guessTheNumberGame = new GuessTheNumber();
+                    guessTheNumberGame.playGame();
+                    break;
 
-                // case 4:
-                //     EvenOrOddGame evenOrOddGame = new EvenOrOddGame();
-                //     evenOrOddGame.play();
-                //     break;
+                case 4:
+                    EvenOrOddGame.main(args);;
+                    break;
 
-                // case 5:
-                //     FindTheRedThreadGame findTheRedThreadGame = new FindTheRedThreadGame();
-                //     findTheRedThreadGame.play();
-                //     break;
+                case 5:
+                    FindTheRedThread.main(args);
+                    break;
 
                 case 6:
                     System.out.println("Thank you for playing! Goodbye!");

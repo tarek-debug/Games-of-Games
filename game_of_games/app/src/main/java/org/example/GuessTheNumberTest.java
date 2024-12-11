@@ -1,9 +1,10 @@
-package GameOfGames;
+package org.example;
 
 import java.util.Scanner;
 import java.util.Random;
 
-public class GuessTheNumber {
+//Test mode
+public class GuessTheNumberTest {
 	
 	private Scanner scanner;
     private Random random;
@@ -17,7 +18,7 @@ public class GuessTheNumber {
         System.out.println("Computer's score: " + game.getComputerScore());
     }
 
-    public GuessTheNumber() {
+    public GuessTheNumberTest() {
         this.scanner = new Scanner(System.in);
         this.random = new Random();
         this.guesserScore = 0;
@@ -44,13 +45,13 @@ public class GuessTheNumber {
         System.out.println("The secret number is within the range: (" + lowerBound + " - " + upperBound + ")");
         
         int secretNumber = random.nextInt(upperBound - lowerBound + 1) + lowerBound;
+        System.out.println("Secret number is: "+ secretNumber);
         
         int maxAllowedGuesses = (upperBound - lowerBound + 1) / 2;
         int numberOfGuesses = random.nextInt(maxAllowedGuesses) + 1;
 
         System.out.println("You will have " + numberOfGuesses + " maximum number of guesses");
 
-        System.out.println("Chooser, choose the secret number within the range given ");
 
         if (secretNumber < lowerBound || secretNumber > upperBound) {
             System.out.println("Invalid number! The chosen number must be within the range.");
@@ -61,7 +62,7 @@ public class GuessTheNumber {
         int remainingGuesses = numberOfGuesses;
 
         while (remainingGuesses > 0) {
-            System.out.println("Guesser, please guess the secret number within the range (" + lowerBound + "-" + upperBound + "):");
+            System.out.println("Please guess the secret number within the range (" + lowerBound + "-" + upperBound + "):");
             System.out.println("You have " + remainingGuesses + " remaining guesses");
 
             String userInput = getUserInputWithTimeout();

@@ -1,8 +1,9 @@
-package CPSC340;
+package org.example;
 
 import java.util.Scanner;
 import java.util.Random;
 
+//Test mode
 public class FindTheRedThreadTest {
 	public static void main(String[] args) {
 		
